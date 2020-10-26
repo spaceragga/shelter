@@ -242,6 +242,7 @@ $desktop-width: 1280px;
     flex: 1;
     justify-content: space-between;
 
+
     @include tablet {
     margin: 0 3rem;
     }
@@ -285,74 +286,8 @@ $desktop-width: 1280px;
         display: flex;
         
         @include phone {
-        
-                .nav-list {
-                    visibility: hidden;
-                }
-
-                .hamburger {
-                    padding: 15px 15px;
-                    display: inline-block;
-                    cursor: pointer;
-                    transition-property: opacity, filter;
-                    transition-duration: 0.15s;
-                    transition-timing-function: linear;
-                    font: inherit;
-                    color: inherit;
-                    text-transform: none;
-                    background-color: transparent;
-                    border: 0;
-                    margin: 0;
-                    overflow: visible; }
-                    .hamburger:hover {
-                      opacity: 0.7; }
-                    .hamburger.is-active:hover {
-                      opacity: 0.7; }
-                    .hamburger.is-active .hamburger-inner,
-                    .hamburger.is-active .hamburger-inner::before,
-                    .hamburger.is-active .hamburger-inner::after {
-                      background-color: #000; }
-                  
-                  .hamburger-box {
-                    width: 40px;
-                    height: 24px;
-                    display: inline-block;
-                    position: relative; }
-                  
-                  .hamburger-inner {
-                    display: block;
-                    top: 50%;
-                    margin-top: -2px; }
-                    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-                      width: 40px;
-                      height: 4px;
-                      background-color: #000;
-                      border-radius: 4px;
-                      position: absolute;
-                      transition-property: transform;
-                      transition-duration: 0.15s;
-                      transition-timing-function: ease; }
-                    .hamburger-inner::before, .hamburger-inner::after {
-                      content: "";
-                      display: block; }
-                    .hamburger-inner::before {
-                      top: -10px; }
-                    .hamburger-inner::after {
-                      bottom: -10px; }
-
-                      .hamburger--boring .hamburger-inner, .hamburger--boring .hamburger-inner::before, .hamburger--boring .hamburger-inner::after {
-                        transition-property: none; }
-                      
-                      .hamburger--boring.is-active .hamburger-inner {
-                        transform: rotate(45deg); }
-                        .hamburger--boring.is-active .hamburger-inner::before {
-                          top: 0;
-                          opacity: 0; }
-                        .hamburger--boring.is-active .hamburger-inner::after {
-                          bottom: 0;
-                          transform: rotate(-90deg); }
-
-}
+                    display: none;
+        }
 
         .nav-list {
             width: 100%;
@@ -366,7 +301,7 @@ $desktop-width: 1280px;
             }
 
             &__link {
-                // color: $color-light-xl;
+                color: $color-dark-3xl;
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: 1.5rem;
                 line-height: 160%;
@@ -382,6 +317,9 @@ $desktop-width: 1280px;
                     padding-bottom: 0.3rem;
                 }
             }
+//             @include phone {
+//                     display: none;
+// }
         }
     }
 }
@@ -434,11 +372,25 @@ $desktop-width: 1280px;
         @include tablet {
             margin-top: 4rem;
         }
+        
+        @include phone {
+            margin-top: 0;
+            justify-content: space-evenly;
+        }
 
         &__button {
             margin: 0 1rem;
             @include pagination_button();
             @include h4();
+            @include phone {
+                font-size: 1rem;
+                padding: 1rem;
+                width: 2.6rem;
+                height: 2.6rem;
+                margin: 0;
+                box-shadow: inset 0 0 0 0.1rem #f1cdb3;
+            }
+
 
             &_active {
                 box-shadow: none;
@@ -452,11 +404,19 @@ $desktop-width: 1280px;
 
             &:disabled {
                 box-shadow: inset 0 0 0 0.3rem $color-dark-s;
+
+                @include phone {
+                    box-shadow: inset 0 0 0 0.1rem #cdcdcd;
+                }
     
                 &:hover {
                     box-shadow: inset 0 0 0 0.3rem $color-dark-s;
                     background-color: transparent;
                     cursor: auto;
+
+                    @include phone {
+                        box-shadow: inset 0 0 0 0.1rem #cdcdcd;
+                    }
                 }
             }
         }
@@ -501,11 +461,22 @@ $desktop-width: 1280px;
         margin: 3rem 0;
         text-align: center;
         @include h4();
+
+        @include phone {
+            font-size: 1rem;
+            letter-spacing: 0.05rem;
+        }
     }
 
     &__button {
         @include button_secondary();
         font-family: Georgia, 'Times New Roman', Times, serif;
+        
+        @include phone {
+            padding: 0.9rem 2.2rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.08rem;
+        }
     }
 }
 
@@ -525,98 +496,190 @@ $desktop-width: 1280px;
         @include logo_subtitle();
     }
 }
+// .footer {
+//     padding-top: 4rem;
+//     background: $footer-gradient-background;
+
+//     @include tablet {
+//         padding-top: 3.1rem;
+//     }
+
+//     .wrapper {
+//         @include tablet {
+//             justify-content: center;
+//             flex-direction: column;
+//         }
+
+//         @include phone {
+//             flex-direction: column;
+//         }
+//     }
+
+//     a {
+//         text-decoration: none; 
+//     }
+
+//     &__image-wrapper {
+//         @include tablet {
+//             display: flex;
+//             justify-content: center;
+//         }
+//     }
+
+//     &__content {
+//         flex: 1;
+//         display: flex;
+//         justify-content: space-between;
+//         margin-top: 1.6rem;
+//         margin-bottom: 6rem;
+//         padding-right: 16.5rem;
+
+//         @include tablet {
+//             padding-right: 0;
+//             margin-top: 0;
+//             justify-content: space-around;
+//             margin-bottom: 3.2rem;
+//         }
+
+//         @include phone {
+//             flex-direction: column;
+//         }
+//     }
+
+//     &__locations,
+//     &__contacts {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: space-between;
+
+//         &-title {
+//             color: $color-light-xl;
+//             @include h3();
+
+//             span {
+//                 display: block;
+//             }
+
+//             @include tablet {
+//                 margin-bottom: 3.2rem;
+//             }
+//         }
+
+//         &-address,
+//         &-phone,
+//         &-mail {
+//             display: flex;
+//             align-items: center;
+
+//             @include tablet {
+//                 margin-bottom: 3.2rem;
+//             }
+
+//             &-place {
+//                 span {
+//                     display: block;
+//                 }
+//             }
+
+//             &-place,
+//             &-text {
+//                 margin-left: 2rem;
+//                 color: $color-primary;
+//                 @include h4();
+//             }
+//         }
+//     }
+// }
+
 .footer {
+    display: flex;
     padding-top: 4rem;
     background: $footer-gradient-background;
 
-    @include tablet {
-        padding-top: 3.1rem;
-    }
-
-    .wrapper {
         @include tablet {
+            padding-top: 1.5rem;
+    }
+        .wrapper {
+            @include tablet {
             justify-content: center;
             flex-direction: column;
         }
 
         @include phone {
             flex-direction: column;
-        }
-    }
-
-    a {
-        text-decoration: none; 
-    }
-
-    &__image-wrapper {
-        @include tablet {
-            display: flex;
-            justify-content: center;
         }
     }
 
     &__content {
-        flex: 1;
+        width: 61.7%;
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
-        margin-top: 1.6rem;
-        margin-bottom: 6rem;
-        padding-right: 16.5rem;
 
         @include tablet {
-            padding-right: 0;
-            margin-top: 0;
+            width: 100%;
             justify-content: space-around;
-            margin-bottom: 3.2rem;
         }
 
         @include phone {
             flex-direction: column;
         }
+
+        &-img {
+            @include tablet {
+                padding-top: 6.2rem;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
     }
 
-    &__locations,
-    &__contacts {
+    .footer-fedback__center {
+        width: 30.2rem;
+        height: 23.4rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        margin-top: 1.5rem;
 
-        &-title {
-            color: $color-light-xl;
+        img {
+            padding-right: 2rem;
+        }
+    }
+
+    .footer-fedback {
+        height: 23.4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+
+        img {
+            padding-right: 2rem;
+        }
+
+        &__title {
             @include h3();
+            color: $color-light-xl;
 
             span {
                 display: block;
             }
-
-            @include tablet {
-                margin-bottom: 3.2rem;
-            }
         }
 
-        &-address,
-        &-phone,
-        &-mail {
+        &__contact {
             display: flex;
             align-items: center;
+            
 
-            @include tablet {
-                margin-bottom: 3.2rem;
-            }
-
-            &-place {
-                span {
-                    display: block;
-                }
-            }
-
-            &-place,
-            &-text {
-                margin-left: 2rem;
-                color: $color-primary;
-                @include h4();
+            a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            @include h4();
+            color: $color-primary;
             }
         }
     }
 }
-
