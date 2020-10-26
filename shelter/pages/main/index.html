@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale-1.0"> 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shelter</title>
-    <link rel="stylesheet" href="/pages/main/main.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <header class="header">
@@ -42,6 +42,31 @@
                     </li>
                 </ul>
             </nav>
+            <div class="modal" id="modal">
+                <button data-close-button class="slider-button">
+                    <img src="../../assets/icons/close.svg" alt="Close">
+                </button>
+              <!-- <div class="modal-header"> -->
+                <!-- <div class="title">Example Modal</div> -->
+            <!-- </div> -->
+            <div class="modal-body">
+                <div class="modal-body__img"><img src="../../assets/img/pets/pets-charly.png" alt=""></div>
+                <div class="modal-body__wrapper">
+                    <p class="modal-body__name">Jenifer</p>
+                    <p class="modal-body__type">Dog</p>
+                    <p class="modal-body__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quod alias ut illo doloremque eum ipsum obcaecati distinctio debitis reiciendis quae quia soluta totam doloribus quos nesciunt necessitatibus, consectetur quisquam accusamus ex, dolorum, dicta vel? Nostrum voluptatem totam, molestiae rem at ad autem dolor ex aperiam. Amet assumenda eos architecto, dolor placeat deserunt voluptatibus tenetur sint officiis perferendis atque! Voluptatem maxime eius eum dolorem dolor exercitationem quis iusto totam! Repudiandae nobis nesciunt sequi iure! Eligendi, eius libero. Ex, repellat sapiente!
+                    </p>
+                    <ul class="modal-body__info">
+                        <li><strong>Age:</strong> <span id="age"></span></li>
+                        <li><strong>Inoculations:</strong> <span id="inoculations"></span></li>
+                        <li><strong>Diseases:</strong> <span id="diseases"></span></li>
+                        <li><strong>Parasites:</strong> <span id="parasites"></span></li>
+                    </ul>
+                </div>
+            </div>
+           
+            </div>
+            <div id="overlay"></div>
         </div>
     </header>
     <main class="main">
@@ -104,7 +129,7 @@
                             <img src="/assets/Arrow.svg" alt="Left Arrow">
                         </button>
                         <div class="pets-cards">
-                            <div class="pets-card">
+                            <div data-modal-target="#modal" class="pets-card">
                                 <img src="/assets/img/pets/pets-katrine.png" alt="Pets Katrine" class="pets-card__image">
                                 <div class="pets-card__content">
                                     <h4 class="pets-card__title">Katrine</h4>
@@ -112,7 +137,7 @@
                                 </div>
                             </div>
 
-                            <div class="pets-card">
+                            <div data-modal-target="#modal" class="pets-card">
                                 <img src="/assets/img/pets/pets-jennifer.png" alt="Pets Jennifer" class="pets-card__image">
                                 <div class="pets-card__content">
                                     <h4 class="pets-card__title">Jennifer</h4>
@@ -120,7 +145,7 @@
                                 </div>
                             </div>
 
-                            <div class="pets-card">
+                            <div data-modal-target="#modal" class="pets-card">
                                 <img src="/assets/img/pets/pets-woody.png" alt="Pets Woody" class="pets-card__image">
                                 <div class="pets-card__content">
                                     <h4 class="pets-card__title">Woody</h4>

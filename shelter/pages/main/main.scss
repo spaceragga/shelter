@@ -227,6 +227,12 @@ $desktop-width: 1280px;
     box-sizing: border-box;
 }
 
+body {
+    @include tablet {
+        padding: 0 19.3rem;
+    }
+}
+
 
 .wrapper {
     display: flex;
@@ -242,6 +248,111 @@ $desktop-width: 1280px;
     position: absolute;
     top: 6rem;
 }
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 1rem;
+    z-index: 10;
+    background-color: #fff;
+    width: 90rem;
+    // max-width: 80%;
+
+    .slider-button {
+        @include slider_button();
+        position: absolute;
+        right: -4.2rem;
+        top: -5.2rem;
+    }
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+//   .modal-header {
+//     padding: 10px 15px;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     border-bottom: 1px solid black;
+//   }
+  
+//   .modal-header .title {
+//     font-size: 1.25rem;
+//     font-weight: bold;
+//   }
+  
+//   .modal-header .close-button {
+//     cursor: pointer;
+//     border: none;
+//     outline: none;
+//     background: none;
+//     font-size: 1.25rem;
+//     font-weight: bold;
+//   }
+  
+  .modal-body {
+    // padding: 10px 15px;
+    display: flex;
+
+    &__wrapper {
+        width: 39.8rem;
+        padding: 5rem 2rem 0 2.9rem;
+    }
+
+    &__img {
+        width: 50rem;
+        height: 50rem;
+    
+        img {
+            display: block;
+            width: 100%;
+            border-radius: 0 0 0.9rem 0.9rem;
+        }
+    }
+
+    &__name {
+        @include h3();
+    }
+    &__type {
+        @include h4();
+    }
+    &__description {
+        @include h5();
+    }
+
+    &__info {
+        font-size: 1.5rem;
+        line-height: 1.1;
+        letter-spacing: 0.06em;
+    }
+}
+
+  
+  #overlay {
+    position: fixed;
+    opacity: 0;
+    // transition: 200ms ease-in-out;
+    transition: opacity 0.25s linear, visibility 0.25s linear;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #292929;
+    pointer-events: none;
+  }
+  
+  #overlay.active {
+    opacity: 0.6;
+    visibility: visible;
+    pointer-events: all;
+    z-index: 9;
+  }
 
 .menu {
     width: 44.3rem;
