@@ -36,6 +36,153 @@
   }
 }
 
+.header__blackout {
+  height: 100vh;
+  width: 100%;
+  z-index: 7;
+  opacity: 0;
+  visibility: hidden;
+  background-color: #292929;
+  -webkit-transition: opacity 0.25s linear, visibility 0.25s linear;
+  transition: opacity 0.25s linear, visibility 0.25s linear;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header__blackout.active {
+  opacity: 0.6;
+  visibility: visible;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 1rem;
+  z-index: 10;
+  background-color: #fff;
+  width: 90rem;
+}
+
+.modal .slider-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 5.2rem;
+  height: 5.2rem;
+  -webkit-box-shadow: inset 0 0 0 0.3rem #f1cdb3;
+          box-shadow: inset 0 0 0 0.3rem #f1cdb3;
+  border-radius: 100%;
+  padding: 1.9rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  position: absolute;
+  right: -4.2rem;
+  top: -5.2rem;
+}
+
+.modal .slider-button:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #fddcc4;
+}
+
+.modal.active {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal-body__wrapper {
+  width: 39.8rem;
+  padding: 5rem 2rem 0 2.9rem;
+}
+
+.modal-body__img {
+  width: 50rem;
+  height: 50rem;
+}
+
+.modal-body__img img {
+  display: block;
+  width: 100%;
+  border-radius: 0 0 0.9rem 0.9rem;
+}
+
+.modal-body__name {
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3.5rem;
+  line-height: 130%;
+  letter-spacing: 0.21rem;
+}
+
+.modal-body__type {
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 115%;
+  letter-spacing: 0.12rem;
+}
+
+.modal-body__description {
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 110%;
+  letter-spacing: 0.09rem;
+}
+
+.modal-body__info {
+  font-size: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s linear, visibility 0.25s linear;
+  transition: opacity 0.25s linear, visibility 0.25s linear;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #292929;
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 0.6;
+  visibility: visible;
+  pointer-events: all;
+  z-index: 9;
+}
+
 .open {
   visibility: hidden;
 }
@@ -419,7 +566,7 @@
   display: -ms-flexbox;
   display: flex;
   padding-top: 4rem;
-  background: url(/assets/noise_transparent.png), radial-gradient(110% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
+  background: url(./assets/noise_transparent.png), radial-gradient(110% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
